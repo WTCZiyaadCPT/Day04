@@ -9,26 +9,8 @@
 /*   Updated: 2020/07/13 13:44:14 by zdecaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-void ft_putchar(char c) {
-	write (1, &c, 1);
-}
-
-void ft_putnbr(int nb) {
-	if (nb < 10 && nb >= 0) {
-	   ft_putchar(nb + '0');
-	}
-	else if (nb >= 10) {
-		ft_putnbr(nb / 10);
-		ft_putchar(nb % 10 + '0');
-	}
-	else {
-		ft_putchar('-');
-		ft_putnbr(nb * -1);
-	}
-}
-int ft_iterative_factorial(int nb) {
+int ft_iterative_factorial(int nb) 
+{
 	int z;
 	z = 1;
 
@@ -43,8 +25,4 @@ int ft_iterative_factorial(int nb) {
 		nb -=1;
 	}
 	return (z);
-}
-int main () {
-	ft_putnbr(ft_iterative_factorial(5));
-	return(0);
 }
